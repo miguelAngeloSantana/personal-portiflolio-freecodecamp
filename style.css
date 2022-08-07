@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap');
+
+:root {
+    --color-nav: #4F4F4F;
+    --color-p: rgb(0, 0, 205);
+    --black: #fff;
+    --main-blue: #1C1C1C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Public Sans', sans-serif;
+    line-height: 1.4;
+}
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-nav);
+}
+
+.conteiner {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+}
+
+nav {
+    background-color: var(--main-blue);
+    width: 100%;
+}
+
+#hamburge {
+    display: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    gap: 24px;
+    padding: 19px;
+}
+
+nav ul li a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 700;
+}
+
+
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60vh;
+} 
+
+#welcome-section .conteiner-welcome {
+    text-align: center;
+}
+
+#welcome-section .conteiner-welcome h1 {
+    font-size: 3.4rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#welcome-section .conteiner-welcome p {
+    margin: 0 auto;
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--black);
+}
+
+
+#project-section {
+    text-align: center;
+    padding: 6rem 2rem;
+    background-color: var(--main-blue);
+}
+
+#project-section h2 {
+    color: white;
+    margin: 0 auto 2rem auto;
+    border-bottom: 0.2rem solid white;
+    max-width: 640px;
+    font-size: 2.3rem;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-gap: 0.50rem;
+    width: 100%;
+    height: 100%;
+}
+
+.projects .project img {
+    width: 380px;
+    height: 230px;
+}
+
+#project-section button {
+    margin-top: 30px;
+    background-color: #3a3d40;
+    border: none;
+    padding: 10px 14px;
+}
+
+#project-section button:hover {
+    background-color: var(--color-nav);
+    transition: 2s;
+}
+
+#project-section button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
+footer {
+    background-color: var(--color-nav);
+}
+
+.footer-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-main p {
+    color: #fff;
+}
+
+.footer-main p:first-child {
+    margin-top: 9px;
+}
+
+.footer-main .footer-main-contato {
+    display: flex;
+    flex-direction: row;
+    gap: 7.4rem;
+    margin-top: 20px;
+    margin-bottom: 18px;
+}
+
+
+@media screen and (max-width:650px) {
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    nav #hamburge {
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        display: flex; 
+        margin: 7px;
+    }
+    
+    nav #hamburge #hamburge-close {
+        display: none;
+    }
+
+    nav #hamburge.show #hamburge-open {
+        display: none;
+    }
+
+    nav #hamburge.show #hamburge-close {
+        display: block;
+    } 
+
+    nav > .conteiner ul {
+        display: none;
+    }
+
+    nav .conteiner > ul.show {
+        background-color: hsl(270, 9%, 17%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        top: 46px;
+        left: 0;
+        z-index: 100;
+        width: 100vw;
+        height: calc(67vh - 46px);
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .footer-main .footer-main-contato {
+        flex-direction: column;
+        gap: 2.2rem;
+    }
+}
+
+@media screen and (max-width:500px) {
+    #welcome-section .conteiner-welcome h1 {
+        font-size: 2.1rem;
+    }
+
+    #welcome-section .conteiner-welcome p {
+        font-size: 1.3rem;
+    }
+}
